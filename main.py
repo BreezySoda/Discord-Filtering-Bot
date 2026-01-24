@@ -20,7 +20,6 @@ class MalwareFilterBot(discord.Client):
         self._update_interval = 3600
 
     async def _fetch_malware_list(self) -> List[str]:
-        """Asynchronously fetch malware list with error handling."""
         try:
             async with aiohttp.ClientSession() as session:
                 async with session.get("FILTER URL HERE") as response:
@@ -32,7 +31,6 @@ class MalwareFilterBot(discord.Client):
         return []
 
     async def _update_malware_list(self):
-        """Periodically update malware list with thread-safe mechanism."""
         current_time = asyncio.get_event_loop().time()
         if current_time - self._last_update < self._update_interval:
             return
@@ -43,11 +41,9 @@ class MalwareFilterBot(discord.Client):
             self._last_update = current_time
 
     def _is_malicious_url(self, url: str) -> bool:
-        """Check if URL is malicious using efficient set lookup."""
         return any(bad_url in url for bad_url in self._malware_list)
 
     async def on_ready(self):
-        """Preload malware list on bot startup."""
         await self._update_malware_list()
         print(f'Logged in as {self.user}')
 
@@ -78,3 +74,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
