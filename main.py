@@ -60,11 +60,11 @@ class MalwareFilterBot(discord.Client):
                 try:
                     if message.channel.permissions_for(message.guild.me).manage_messages:
                         await message.delete()
-                        await message.channel.send(f"{message.author.mention} ❌ DisAllowed URL Detected!")
+                        await message.channel.send(f"{message.author.mention} ❌ DisAllow URL Detected!")
                     else:
                         await message.channel.send(f"{message.author.mention} ⚠️ Potential malicious URL detected. Admins have been notified.")
                 except discord.errors.Forbidden:
-                    print("Cannot delete dangerous message. Check permissions.")
+                    print("Cannot delete disallow url included message. Check permissions.")
                 except Exception as e:
                     print(f"Unexpected error handling malicious URL: {e}")
 
@@ -74,4 +74,5 @@ def main():
 
 if __name__ == "__main__":
     main()
+
 
