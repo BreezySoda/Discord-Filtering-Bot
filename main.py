@@ -60,13 +60,13 @@ class FilterBot(discord.Client):
                 try:
                     if message.channel.permissions_for(message.guild.me).manage_messages:
                         await message.delete()
-                        await message.channel.send(f"{message.author.mention} ❌ DisAllow URL Detected!")
+                        await message.channel.send(f"{message.author.mention} ❌ DisAllow Word Detected!")
                     else:
-                        await message.channel.send(f"{message.author.mention} ⚠️ Potential disallow URL detected. Admins have been notified.")
+                        await message.channel.send(f"{message.author.mention} ⚠️ Potential disallow word detected. Admins have been notified.")
                 except discord.errors.Forbidden:
-                    print("Cannot delete disallow url included message. Check permissions.")
+                    print("Cannot delete disallow word included message. Check permissions.")
                 except Exception as e:
-                    print(f"Unexpected error handling disallow URL: {e}")
+                    print(f"Unexpected error handling disallow word: {e}")
 
 def main():
     bot = FilterBot(intents=intents)
@@ -74,3 +74,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+
