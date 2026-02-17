@@ -5,6 +5,7 @@ Discord でユーザーが送信したメッセージ内の単語をブロック
 Discord標準の機能で基本的には充分ですが、定期的に定義更新が必要なマルウェアURLリストなどを使用する場合にこのBotは適しています。
 
 ## 使用方法
-main.py の FILTER URL HERE にフィルターのURLを挿入します。
+* main.py の FILTER URL HERE にフィルターのURLを挿入します。
 
 この場合、URLはフィルタリングするメッセージまたはドメインを各行に含む TXT ファイルにする必要があります。
+* .envの Token here にDiscord Botのトークンを挿入します。
