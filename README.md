@@ -1,8 +1,10 @@
 # Discord Filtering Bot
-You can block words in messages sent by users on Discord.
-If disallowed word is detected, it will be deleted immediately and the sender will be notified.
+Discord でユーザーが送信したメッセージ内の単語をブロックできます。
+禁止された単語が検出された場合は、直ちに削除され、送信者に通知されます。
+
+Discord標準の機能で基本的には充分ですが、定期的に定義更新が必要なマルウェアURLリストなどを使用する場合にこのBotは適しています。
 
 ## How to use
-Insert the URL of your filter into FILTER URL HERE in main.py
+main.py の FILTER URL HERE にフィルターのURLを挿入します。
 
-In this case, the URL should be a TXT file with each line containing a message or URL you want to filter.
+この場合、URLはフィルタリングするメッセージまたはドメインを各行に含む TXT ファイルにする必要があります。
