@@ -10,7 +10,7 @@ intents.members = True
 
 bot = commands.Bot(command_prefix="!", intents=intents)
 
-BANNED_USER_IDS = {1439871778632503361, 987654321098765432}
+BANNED_USER_IDS = {1286942627991781480, 987654321098765432}
 
 @bot.event
 async def on_member_join(member):
